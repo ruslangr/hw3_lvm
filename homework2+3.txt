@@ -1,0 +1,13 @@
+Домашнее задание #3
+* в виртуалке disks решить следующую задачу:
+ a) создать R1 (100M) (/mnt/boot) (тут будет раздел для загрузки.помните, что для загрузки нужен суперблок версии < 1)
+ b) создать R10 (1200M) (vg_home)
+ c) создать R5 (300M) (vg_var:/mnt/var)
+ b) создать 10 разделов по 1G и примонтировать их в /mnt/home как /mnt/home/user{1..10}
+Шпаргалка по командам:
+ pvs/vgs/lvs
+ pvcreate/vgcreate/lvcreate
+ lvcreate -n ThinPool0 -L $size vg_home
+ lvcreate -V $vsize --thinpool ThinPool0 vg_home
+ fdisk/sfdisk
+ mdadm 
